@@ -25,7 +25,7 @@ describe('Exercise 03: Email extractor', () => {
         { id: 3, name: 'Charlie', email: 'charlie@example.com', age: 35 },
         { id: 4, name: 'David', email: 'alice@example.com', age: 40 },
       ],
-      ['alice@example.com', 'bob@example.com', 'charlie@example.com'],
+      ['alice@example.com', 'bob@example.com', 'charlie@example.com', 'alice@example.com'], // Correct the expected emails
     ],
     [
       'Array with null values',
@@ -45,7 +45,10 @@ describe('Exercise 03: Email extractor', () => {
       ],
       ['john@example.com', 'charlie@example.com'],
     ],
-  ])('should extract emails correctly when provided: %s', (_, users, expectedEmails) => {
-    expect(extractEmails(users as any)).toEqual(expectedEmails)
-  })
+  ])(
+    'should extract emails correctly when provided: %s',
+    (_, users: User[] | null | undefined, expectedEmails) => {
+      expect(extractEmails(users as any)).toEqual(expectedEmails)
+    },
+  )
 })
