@@ -4,7 +4,8 @@ Given an integer `rowIndex`, return the rowIndexth (0-indexed) row of the Pascal
 
 In **Pascal's triangle**, each number is the sum of the two numbers directly above it as shown:
 
-![Pascals triangle](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
+![Pascals triangle](https://
+upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
 
 Example 1:
 
