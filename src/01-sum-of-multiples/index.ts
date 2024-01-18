@@ -1,14 +1,14 @@
 // index.ts
 export function sumOfMultiples(multiple: number, max: number): number {
   if (multiple > max) {
-    return 0;
+    return 0
   }
 
-  let sum = 0;
+  let sum = 0
 
   for (let i = multiple; i <= max; i += multiple) {
-    sum += i;
+    sum += i
   }
 
-  return sum;
+  return sum
 }
