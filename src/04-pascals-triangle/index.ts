@@ -1,22 +1,15 @@
-// index.ts
 export function getPascalsTriangleRow(rowIndex: number): number[] {
-  if (rowIndex < 0) {
-    throw new Error('Row index must be non-negative.')
-  }
-
-  const row: number[] = []
-
-  for (let i = 0; i <= rowIndex; i++) {
-    let coefficient = 1
-
-    for (let j = 0; j <= i; j++) {
-      if (row[j] !== undefined) {
-        coefficient = (coefficient * (i - j)) / (j + 1)
-      }
+  if (rowIndex === 0) {
+    return [1]
+  } else if (rowIndex === 1) {
+    return [1, 1]
+  } else {
+    const previousRow = getPascalsTriangleRow(rowIndex - 1)
+    const row = [1]
+    for (let i = 0; i < previousRow.length - 1; i++) {
+      row.push(previousRow[i] + previousRow[i + 1])
     }
-
-    row.push(coefficient)
+    row.push(1)
+    return row
   }
-
-  return row
 }
